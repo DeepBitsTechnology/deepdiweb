@@ -1,0 +1,333 @@
+{
+    "nodes": [
+        {
+            "id": "0x404874",
+            "instructions": [
+                {
+                    "section_name": ".text",
+                    "vma": 4212852,
+                    "rawBytes": "55",
+                    "instStr": "push rbp",
+                    "branch": "",
+                    "branch_label": "",
+                    "opcode": "push",
+                    "operands": "rbp",
+                    "stringRef": null,
+                    "branchRef": {
+                        "vma": 4212852
+                    },
+                    "targetRef": null,
+                    "crossRef": [
+                        {
+                            "vma": 4212959
+                        },
+                        {
+                            "vma": 4212959
+                        }
+                    ],
+                    "isBranch": false,
+                    "isFunction": true,
+                    "labelName": "abc",
+                    "isCode": true
+                },
+                {
+                    "section_name": ".text",
+                    "vma": 4212853,
+                    "rawBytes": "4889e5",
+                    "instStr": "mov rbp, rsp",
+                    "branch": "",
+                    "branch_label": "",
+                    "opcode": "mov",
+                    "operands": "rbp, rsp",
+                    "stringRef": null,
+                    "branchRef": null,
+                    "targetRef": null,
+                    "crossRef": [],
+                    "isBranch": false,
+                    "isFunction": false,
+                    "labelName": "abc",
+                    "isCode": true
+                },
+                {
+                    "section_name": ".text",
+                    "vma": 4212856,
+                    "rawBytes": "4883ec10",
+                    "instStr": "sub rsp, 0x10",
+                    "branch": "",
+                    "branch_label": "",
+                    "opcode": "sub",
+                    "operands": "rsp, 0x10",
+                    "stringRef": null,
+                    "branchRef": null,
+                    "targetRef": null,
+                    "crossRef": [],
+                    "isBranch": false,
+                    "isFunction": false,
+                    "labelName": "abc",
+                    "isCode": true
+                },
+                {
+                    "section_name": ".text",
+                    "vma": 4212860,
+                    "rawBytes": "48897df8",
+                    "instStr": "mov qword ptr [rbp - 8], rdi",
+                    "branch": "",
+                    "branch_label": "",
+                    "opcode": "mov",
+                    "operands": "qword ptr [rbp - 8], rdi",
+                    "stringRef": null,
+                    "branchRef": null,
+                    "targetRef": null,
+                    "crossRef": [],
+                    "isBranch": false,
+                    "isFunction": false,
+                    "labelName": "abc",
+                    "isCode": true
+                },
+                {
+                    "section_name": ".text",
+                    "vma": 4212864,
+                    "rawBytes": "488b45f8",
+                    "instStr": "mov rax, qword ptr [rbp - 8]",
+                    "branch": "",
+                    "branch_label": "",
+                    "opcode": "mov",
+                    "operands": "rax, qword ptr [rbp - 8]",
+                    "stringRef": null,
+                    "branchRef": null,
+                    "targetRef": null,
+                    "crossRef": [],
+                    "isBranch": false,
+                    "isFunction": false,
+                    "labelName": "abc",
+                    "isCode": true
+                },
+                {
+                    "section_name": ".text",
+                    "vma": 4212868,
+                    "rawBytes": "8b00",
+                    "instStr": "mov eax, dword ptr [rax]",
+                    "branch": "",
+                    "branch_label": "",
+                    "opcode": "mov",
+                    "operands": "eax, dword ptr [rax]",
+                    "stringRef": null,
+                    "branchRef": null,
+                    "targetRef": null,
+                    "crossRef": [],
+                    "isBranch": false,
+                    "isFunction": false,
+                    "labelName": "abc",
+                    "isCode": true
+                },
+                {
+                    "section_name": ".text",
+                    "vma": 4212870,
+                    "rawBytes": "2500010000",
+                    "instStr": "and eax, 0x100",
+                    "branch": "",
+                    "branch_label": "",
+                    "opcode": "and",
+                    "operands": "eax, 0x100",
+                    "stringRef": null,
+                    "branchRef": null,
+                    "targetRef": null,
+                    "crossRef": [],
+                    "isBranch": false,
+                    "isFunction": false,
+                    "labelName": "abc",
+                    "isCode": true
+                },
+                {
+                    "section_name": ".text",
+                    "vma": 4212875,
+                    "rawBytes": "85c0",
+                    "instStr": "test eax, eax",
+                    "branch": "",
+                    "branch_label": "",
+                    "opcode": "test",
+                    "operands": "eax, eax",
+                    "stringRef": null,
+                    "branchRef": null,
+                    "targetRef": null,
+                    "crossRef": [],
+                    "isBranch": false,
+                    "isFunction": false,
+                    "labelName": "abc",
+                    "isCode": true
+                },
+                {
+                    "section_name": ".rodata",
+                    "vma": 4214048,
+                    "rawBytes": "01",
+                    "instStr": "<insn>db</insn>  <span class='raw'>01h</span>",
+                    "branch": "",
+                    "branch_label": "",
+                    "opcode": "",
+                    "operands": "",
+                    "stringRef": null,
+                    "branchRef": null,
+                    "targetRef": null,
+                    "crossRef": [],
+                    "isBranch": false,
+                    "isFunction": false,
+                    "labelName": "abc",
+                    "isCode": false
+                }
+            ]
+        },
+        {
+            "id": "0x40488f",
+            "instructions": [
+                {
+                    "section_name": ".text",
+                    "vma": 4212879,
+                    "rawBytes": "488b45f8",
+                    "instStr": "mov rax, qword ptr [rbp - 8]",
+                    "branch": "",
+                    "branch_label": "",
+                    "opcode": "mov",
+                    "operands": "rax, qword ptr [rbp - 8]",
+                    "stringRef": null,
+                    "branchRef": null,
+                    "targetRef": null,
+                    "crossRef": [],
+                    "isBranch": false,
+                    "isFunction": false,
+                    "labelName": "abc",
+                    "isCode": true
+                },
+                {
+                    "section_name": ".text",
+                    "vma": 4212883,
+                    "rawBytes": "ba01000000",
+                    "instStr": "mov edx, 1",
+                    "branch": "",
+                    "branch_label": "",
+                    "opcode": "mov",
+                    "operands": "edx, 1",
+                    "stringRef": null,
+                    "branchRef": null,
+                    "targetRef": null,
+                    "crossRef": [],
+                    "isBranch": false,
+                    "isFunction": false,
+                    "labelName": "abc",
+                    "isCode": true
+                },
+                {
+                    "section_name": ".text",
+                    "vma": 4212888,
+                    "rawBytes": "be00000000",
+                    "instStr": "mov esi, 0",
+                    "branch": "",
+                    "branch_label": "",
+                    "opcode": "mov",
+                    "operands": "esi, 0",
+                    "stringRef": null,
+                    "branchRef": null,
+                    "targetRef": null,
+                    "crossRef": [],
+                    "isBranch": false,
+                    "isFunction": false,
+                    "labelName": "abc",
+                    "isCode": true
+                },
+                {
+                    "section_name": ".text",
+                    "vma": 4212893,
+                    "rawBytes": "4889c7",
+                    "instStr": "mov rdi, rax",
+                    "branch": "",
+                    "branch_label": "",
+                    "opcode": "mov",
+                    "operands": "rdi, rax",
+                    "stringRef": null,
+                    "branchRef": null,
+                    "targetRef": null,
+                    "crossRef": [],
+                    "isBranch": false,
+                    "isFunction": false,
+                    "labelName": "abc",
+                    "isCode": true
+                },
+                {
+                    "section_name": ".rodata",
+                    "vma": 4214048,
+                    "rawBytes": "01",
+                    "instStr": "<insn>db</insn>  <span class='raw'>01h</span>",
+                    "branch": "",
+                    "branch_label": "",
+                    "opcode": "",
+                    "operands": "",
+                    "stringRef": null,
+                    "branchRef": null,
+                    "targetRef": null,
+                    "crossRef": [],
+                    "isBranch": false,
+                    "isFunction": false,
+                    "labelName": "abc",
+                    "isCode": false
+                }
+            ]
+        },
+        {
+            "id": "0x4048a5",
+            "instructions": [
+                {
+                    "section_name": ".text",
+                    "vma": 4212901,
+                    "rawBytes": "c9",
+                    "instStr": "leave",
+                    "branch": "",
+                    "branch_label": "",
+                    "opcode": "",
+                    "operands": "",
+                    "stringRef": null,
+                    "branchRef": null,
+                    "targetRef": null,
+                    "crossRef": [],
+                    "isBranch": false,
+                    "isFunction": false,
+                    "labelName": "abc",
+                    "isCode": true
+                },
+                {
+                    "section_name": ".rodata",
+                    "vma": 4214048,
+                    "rawBytes": "01",
+                    "instStr": "<insn>db</insn>  <span class='raw'>01h</span>",
+                    "branch": "",
+                    "branch_label": "",
+                    "opcode": "",
+                    "operands": "",
+                    "stringRef": null,
+                    "branchRef": null,
+                    "targetRef": null,
+                    "crossRef": [],
+                    "isBranch": false,
+                    "isFunction": false,
+                    "labelName": "abc",
+                    "isCode": false
+                }
+            ]
+        }
+    ],
+    "links": [
+        {
+            "from": "0x404874",
+            "to": "0x40488f",
+            "type": "notTaken"
+        },
+        {
+            "from": "0x404874",
+            "to": "0x4048a5",
+            "type": "taken"
+        },
+        {
+            "from": "0x40488f",
+            "to": "0x4048a5",
+            "type": "unconditional"
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+eslint-loader, eslint-friendly-formatter -> eslint-webpack-plugin, escope
+
+babel-preset-stage-2 -> babel-loader
+babel-plugin-transform-runtime -> @babel/plugin-transform-runtime
+
+babel-XXX -> @babel/XXX

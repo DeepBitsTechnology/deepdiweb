@@ -1,0 +1,17 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd web && npm install
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    # IMPORTANT - Please verify your build output directory
+    baseDirectory: web/dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - web/node_modules/**/*
