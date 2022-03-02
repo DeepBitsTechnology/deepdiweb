@@ -4,7 +4,7 @@ import path from 'path';
 // load whole executables from fs
 export const EXAMPLES: Example[] = [];
 for (const file_name of fs.readdirSync(__dirname)) {
-    if (file_name.endsWith('.ts')) {
+    if (file_name.endsWith('.ts') || file_name.endsWith('.js')) {
         continue;
     }
 
@@ -22,6 +22,14 @@ EXAMPLES.push({
     raw: true,
     arch: 'x86',
     mode: 'x64',
+});
+
+EXAMPLES.push({
+    name: 'strcpy_arm',
+    bytes: Buffer.from([0x01, 0x20, 0x40, 0xE2, 0x02, 0x20, 0x61, 0xE0, 0x01, 0x30, 0xD1, 0xE4, 0x00, 0x00, 0x53, 0xE3, 0x02, 0x30, 0xC1, 0xE7, 0xFB, 0xFF, 0xFF, 0x1A, 0x1E, 0xFF, 0x2F, 0xE1]),
+    raw: true,
+    arch: 'ARM',
+    mode: 'LE',
 });
 
 export const EXAMPLE_NAMES = EXAMPLES.map(e => e.name);

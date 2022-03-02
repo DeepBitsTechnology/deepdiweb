@@ -21,7 +21,5 @@ selenium-debug.log
 /web/package-lock.json
 /web/yarn.lock
 
-/site/setup.log
-/site/oda/logs/oda.log
-/site/oda/static/*/
-/site/.venv/
+/proxy/dist
+/proxy/node_modules

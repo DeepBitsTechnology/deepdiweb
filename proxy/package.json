@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/index.ts",
-    "build": "yarn run tsc"
+    "build": "yarn run tsc && find ./src/examples ! -name '*.ts' -type f | xargs cp -t ./dist/examples"
   },
   "dependencies": {
     "axios": "^0.25.0",

@@ -1,9 +1,8 @@
 import { createHash } from 'crypto';
-import { Request, Response } from 'express';
 import { promises as fs } from 'fs';
-import { UPLOAD_DIR } from '../config';
-import { read_until, spawn_and_read } from '../util';
 import { get_project } from '../database';
+import { Request, Response } from 'express';
+import { read_until, spawn_and_read } from '../util';
 
 export default async function load(req: Request, res: Response) {
     const short_name = req.query.short_name as string;
@@ -164,8 +163,8 @@ async function nm(file_path: string): Promise<{ symbols: BinarySymbol[], functio
 
         if (type.toLocaleLowerCase() === 't') {
             functions.push({
-                retval: "unknown",
-                args: "unknown",
+                retval: 'unknown',
+                args: 'unknown',
                 vma: address,
                 name: symbol
             });

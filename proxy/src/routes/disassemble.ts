@@ -1,10 +1,9 @@
+import { DEEPDI_URL } from '../config';
+import FormData from 'form-data';
+import { promises as fs } from 'fs';
+import { get_project } from '../database';
 import { Request, Response } from 'express';
 import axios, { AxiosError } from 'axios';
-import FormData from 'form-data';
-import { promises as fs } from "fs";
-import { UPLOAD_DIR, DEEPDI_URL } from "../config";
-import { get_project } from '../database';
-
 
 export default async function disassemble(req: Request, res: Response) {
     const short_name = req.params.short_name as string;

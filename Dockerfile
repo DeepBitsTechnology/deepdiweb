@@ -27,5 +27,4 @@ WORKDIR /proxy
 RUN yarn install
 RUN yarn run build
 
-CMD [node", "/proxy/dist/index.js" ]
-# ENTRYPOINT [ "bash" ]
+CMD [ "node", "/proxy/dist/index.js" ]

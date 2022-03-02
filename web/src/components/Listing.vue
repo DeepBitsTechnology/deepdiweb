@@ -477,6 +477,7 @@ export default {
           sectionName: du.sectionName,
           isCode: du.isCode,
           vma: du.vma,
+          rawBytes: du.rawBytes,
           comment: _.get(comment, 'comment'),
           instStr: du.instStr
         })
