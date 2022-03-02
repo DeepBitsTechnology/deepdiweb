@@ -1,11 +1,11 @@
 FROM public.ecr.aws/lts/ubuntu:18.04
-
+ARG DEEPDI_URL
 # proxy server options
 ENV UPLOAD_DIR='/tmp/cache'
 ENV MAX_PROJECTS_CACHED='100'
 ENV MAX_UPLOADS='50'
 # #url for deepdi service
-ENV DEEPDI_URL = $DEEPDI_URL
+ENV DEEPDI_URL=$DEEPDI_URL
 
 RUN mkdir -p $UPLOAD_DIR
 
@@ -28,4 +28,3 @@ RUN yarn install
 RUN yarn run build
 
 CMD [ "node", "/proxy/dist/index.js" ]
-# ENTRYPOINT [ "bash" ]
