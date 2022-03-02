@@ -1,6 +1,6 @@
 import { UploadedFile } from 'express-fileupload';
 import { generate_id } from '../util';
-import { MAX_UPLOADS, UPLOAD_DIR } from '../config';
+import { MAX_PROJECTS_CACHED, UPLOAD_DIR } from '../config';
 import { Request, Response } from 'express';
 import { Stats, promises as fs } from 'fs';
 import { add_project, delete_project } from '../database';
@@ -52,7 +52,7 @@ async function clear_cache_if_over() {
     // sort by ascending order, i.e, oldest files first
     file_infos.sort((a, b) => a.stats.birthtimeMs - b.stats.birthtimeMs);
 
-    const files_to_remove = file_infos.length - MAX_UPLOADS;
+    const files_to_remove = file_infos.length - MAX_PROJECTS_CACHED;
     for (let i = 0; i < files_to_remove; i++) {
         const name = file_infos[i].file;
         await fs.rm(`${UPLOAD_DIR}/${name}`);
