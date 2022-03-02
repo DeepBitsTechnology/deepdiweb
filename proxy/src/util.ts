@@ -1,4 +1,4 @@
-import { spawn, SpawnOptions } from 'child_process';
+import { spawn } from 'child_process';
 
 /**
  * Generates an id of length 8, not guaranteed to be unique

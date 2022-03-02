@@ -1,4 +1,4 @@
-import { MAX_PROJECTS_CACHED } from "./config";
+import { MAX_PROJECTS_CACHED } from './config';
 
 export const Projects: Map<string, ProjectInfo> = new Map();
 

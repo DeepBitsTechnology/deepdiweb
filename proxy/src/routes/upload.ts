@@ -1,8 +1,8 @@
-import { Request, Response } from 'express';
 import { UploadedFile } from 'express-fileupload';
-import { promises as fs, Stats } from 'fs';
 import { generate_id } from '../util';
-import { UPLOAD_DIR, MAX_UPLOADS, MAX_PROJECTS_CACHED } from '../config';
+import { MAX_UPLOADS, UPLOAD_DIR } from '../config';
+import { Request, Response } from 'express';
+import { Stats, promises as fs } from 'fs';
 import { add_project, delete_project } from '../database';
 
 

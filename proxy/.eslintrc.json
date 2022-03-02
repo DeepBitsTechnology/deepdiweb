@@ -9,6 +9,21 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
-    "semi": "error"
+    "semi": "error",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "sort-imports": [
+      "warn",
+      {
+        "memberSyntaxSortOrder": [
+          "none",
+          "all",
+          "single",
+          "multiple"
+        ]
+      }
+    ]
   }
 }
