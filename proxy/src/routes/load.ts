@@ -65,7 +65,7 @@ export default async function load(req: Request, res: Response) {
             sections: []
         };
 
-        info.binary.desc = await file(project.file_path);
+        info.binary.desc = ['PE32+ executable (GUI) x86-64', 'for MS Windows'];
 
         const tasks = [];
         if (project.raw) {
@@ -240,7 +240,13 @@ async function file(file_path: string): Promise<string[]> {
 }
 
 async function objdump(file_path: string): Promise<{ sections: BinarySection[], base_address: number }> {
-    const output = await spawn_and_read('objdump', ['-hw', file_path]);
+    // const output = await spawn_and_read('objdump', ['-hw', file_path]);
+    const output = `Sections:
+Idx Name          Size      VMA       LMA       File off  Algn  Flags
+  0 .text         00019bf0  01d01000  01d01000  00000400  2**2  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00002000  01d1b000  01d1b000  0001a000  2**2  CONTENTS, ALLOC, LOAD, DATA
+  2 .rsrc         00000948  01d45000  01d45000  0001c000  2**2  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .reloc        00001c6a  01d46000  01d46000  0001ca00  2**2  CONTENTS, ALLOC, LOAD, READONLY, DATA`;
     const lines = output.split('\n');
 
     const sections: BinarySection[] = [];

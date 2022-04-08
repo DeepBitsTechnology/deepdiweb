@@ -39,13 +39,6 @@ module.exports = {
         options: vueLoaderConfig
       },
       {
-        test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ]
-      },
-      {
         test: /\.js$/,
         include: [resolve('src'), resolve('test')],
         use: {
@@ -82,5 +75,6 @@ module.exports = {
   plugins: [
     ...(config.dev.useEslint ? [new ESLintPlugin({})] : []),
     new VueLoaderPlugin()
-  ]
+  ],
+  mode: 'development',
 }

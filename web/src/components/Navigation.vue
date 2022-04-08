@@ -54,23 +54,8 @@
           text="Examples"
           right
         >
-          <b-dropdown-item href="/odaweb/strcpy_x86">
-            strcpy_x86
-          </b-dropdown-item>
-          <b-dropdown-item href="/odaweb/strcpy_arm">
-            strcpy_arm
-          </b-dropdown-item>
-          <b-dropdown-item href="/odaweb/whoami">
-            whoami
-          </b-dropdown-item>
-          <b-dropdown-item href="/odaweb/mkdir">
-            mkdir
-          </b-dropdown-item>
-          <b-dropdown-item href="/odaweb/cat">
-            cat
-          </b-dropdown-item>
-          <b-dropdown-item href="/odaweb/chown">
-            chown
+          <b-dropdown-item href="/odaweb/test">
+            test
           </b-dropdown-item>
         </b-nav-item-dropdown>
 

@@ -6,7 +6,7 @@ import { generate_id } from './util';
 import load from './routes/load';
 import path from 'path';
 import upload from './routes/upload';
-import { EXAMPLES, EXAMPLE_NAMES } from './examples/examples';
+import { EXAMPLES, EXAMPLE_NAMES } from '../dist/examples';
 import disassemble, { disassemble_bytes } from './routes/disassemble';
 
 const router = Router();

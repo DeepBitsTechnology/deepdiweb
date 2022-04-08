@@ -1,5 +1,3 @@
-import { DEEPDI_URL } from '../config';
-import FormData from 'form-data';
 import { promises as fs } from 'fs';
 import { get_project } from '../database';
 import { Request, Response } from 'express';
@@ -19,26 +17,28 @@ export default async function disassemble(req: Request, res: Response) {
     }
 
     try {
-        const form = new FormData();
-        const bytes = await fs.readFile(project.file_path);
-
-        if (project.raw) {
-            const byte_string = [...bytes].map(x => x.toString(16)).join(' ');
-
-            form.append('bytes', byte_string);
-            form.append('arch', project.arch);
-            form.append('mode', project.mode);
-        } else {
-            form.append('file', bytes, 'filename');
-        }
-
-        const resp = await axios.post(DEEPDI_URL,
-            form.getBuffer(),
-            {
-                headers: form.getHeaders()
-            }
-        );
-        res.status(200).json(resp.data);
+        // const form = new FormData();
+        // const bytes = await fs.readFile(project.file_path);
+        //
+        // if (project.raw) {
+        //     const byte_string = [...bytes].map(x => x.toString(16)).join(' ');
+        //
+        //     form.append('bytes', byte_string);
+        //     form.append('arch', project.arch);
+        //     form.append('mode', project.mode);
+        // } else {
+        //     form.append('file', bytes, 'filename');
+        // }
+        //
+        // const resp = await axios.post(DEEPDI_URL,
+        //     form.getBuffer(),
+        //     {
+        //         headers: form.getHeaders()
+        //     }
+        // );
+        // res.status(200).json(resp.data);
+        const raw = await fs.readFile(__dirname + '/../sample_output/file.json');
+        res.status(200).type('json').send(raw);
     }
     catch (ex) {
         console.log(`An error occured while trying to disassemble.\n${ex}`);
@@ -49,24 +49,26 @@ export default async function disassemble(req: Request, res: Response) {
 
 export async function disassemble_bytes(req: Request, res: Response) {
     try {
-        const { bytes, arch, mode } = req.body;
-        if (!bytes || !arch || !mode) {
-            res.status(400).send('Bytes|Arch|Mode not provided.');
-            return;
-        }
-
-        const form = new FormData();
-        form.append('bytes', bytes);
-        form.append('arch', arch);
-        form.append('mode', mode);
-
-        const resp = await axios.post(DEEPDI_URL,
-            form.getBuffer(),
-            {
-                headers: form.getHeaders()
-            }
-        );
-        res.status(200).json(resp.data);
+        // const { bytes, arch, mode } = req.body;
+        // if (!bytes || !arch || !mode) {
+        //     res.status(400).send('Bytes|Arch|Mode not provided.');
+        //     return;
+        // }
+        //
+        // const form = new FormData();
+        // form.append('bytes', bytes);
+        // form.append('arch', arch);
+        // form.append('mode', mode);
+        //
+        // const resp = await axios.post(DEEPDI_URL,
+        //     form.getBuffer(),
+        //     {
+        //         headers: form.getHeaders()
+        //     }
+        // );
+        // res.status(200).json(resp.data);
+        const raw = await fs.readFile(__dirname + '/../sample_output/bytes.json');
+        res.status(200).type('json').send(raw);
     }
     catch (ex) {
         console.log(`An error occured while trying to disassemble.\n${ex}`);
