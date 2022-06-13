@@ -14,18 +14,37 @@ export default {
   },
   data(){
       return{
-          graph : []
+          loaded : false,
       }
   },
   mounted() {
+        if(this.loaded) return;
         this.createGraph(); //create graph on mount
         console.log("IN")
   },
   methods: {
+    redrawGraph(){
+        const zz = d3
+            .select('svg');
+        const graph = d3.select('g');
+        zz.remove();
+        const rect = document.getElementById("graphHolder").getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+        console.log(width, height);
+
+        //make this height+width the size of the inset of the div
+        const svg = d3
+            .select("#graphHolder")
+            .append('svg')
+            .attr("width", "100%")
+            .attr("height", "550")
+            .attr("overflow-y", "hidden")
+            .attr("overflow-x", "hidden");
+        svg.append(function() { return graph; });
+
+    },
     createGraph() {
-        if(this.graph.length != 0){
-            return;
-        }
         let a = this.$store.state.displayUnits;
         // get all lines of assembly
         //dictionary with key of memory address in int, and assembly code as value
@@ -149,7 +168,7 @@ export default {
         //css here needs help.
         const rect = document.getElementById("graphHolder").getBoundingClientRect();
         const width = rect.width;
-        const height = rect.height;
+        const height = rect.height ? rect.height : 550 //not sure why width works but height doesn't
         console.log(width, height);
 
         //make this height+width the size of the inset of the div
@@ -160,7 +179,7 @@ export default {
             .attr("overflow-y", "hidden")
             .attr("overflow-x", "hidden");
         const g1 = svg.append("g");
-        console.log(svg)
+        //console.log(svg)
         svg.call(d3.zoom()
             .extent([[0, 0], [width, height]]) 
             .scaleExtent([0.2, 8])  //scale limits
