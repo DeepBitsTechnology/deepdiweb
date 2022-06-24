@@ -167,8 +167,9 @@ export default {
         console.log("READY TO RENDER")
         //css here needs help.
         const rect = document.getElementById("graphHolder").getBoundingClientRect();
+        const botBox = document.getElementsByClassName("status-bar")[0].getBoundingClientRect(); //get status bar location
         const width = rect.width;
-        const height = rect.height ? rect.height : 550 //not sure why width works but height doesn't
+        const height = botBox.top-rect.bottom //find height to make box by subtracting status bar and top of screen
         console.log(width, height);
 
         //make this height+width the size of the inset of the div
