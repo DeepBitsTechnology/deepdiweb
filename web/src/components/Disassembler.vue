@@ -58,6 +58,7 @@
             <b-tabs
               v-model="tabIndex"
               style="margin-left:5px;"
+              @input="onInput"
             >
               <b-tab
                 title="Disassembly"
@@ -85,6 +86,16 @@
                   <FileInfo />
                 </div>
               </b-tab>
+              <KeepAlive>
+              <b-tab title="Call Graph">
+                <div style="position:absolute; top:32px; left:0; right:0; bottom:0; overflow: scroll;">
+                  <div v-if="visitedTabs.includes(5)">
+                    <CallGraph/>
+                  </div>
+                </div>
+              </b-tab>
+              </KeepAlive>
+              
             </b-tabs>
 
             <!-- <SplitBox splitX="600">
@@ -128,6 +139,7 @@ import { mapState } from 'vuex'
 import { copyOdaMaster, canEdit } from '../api/oda'
 import { OPEN_LISTING_TAB, bus } from '../bus'
 
+
 export default {
   name: 'DisassemblerView',
   components: {
@@ -143,6 +155,7 @@ export default {
     UploadFileModal: () => import('@/components/modals/UploadFileModal'),
     ConfigureUploadModal: () => import('@/components/modals/ConfigureUploadModal'),
     GraphView: () => import('@/components/tabs/GraphView'),
+    CallGraph: () => import('@/components/tabs/CallGraph'),
     SharingModal: () => import('@/components/modals/SharingModal'),
     StatusBar: () => import('./StatusBar'),
     CommentModal: () => import('@/components/modals/CommentModal'),
@@ -158,7 +171,8 @@ export default {
       notFound: null,
       loading: true,
       tabIndex: 0,
-      graphVisible: false
+      graphVisible: false,
+      visitedTabs: []
     }
   },
   computed: mapState([
@@ -179,6 +193,11 @@ export default {
     bus.$on(OPEN_LISTING_TAB, () => { this.tabIndex = 0 })
   },
   methods: {
+    onInput(value) {
+        if(!this.visitedTabs.includes(value)){
+          this.visitedTabs.push(value)
+        }
+      },
     async fetchData () {
       this.loading = true
       const shortName = this.$route.params.shortName
