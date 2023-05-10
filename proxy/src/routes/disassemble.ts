@@ -23,7 +23,7 @@ export default async function disassemble(req: Request, res: Response) {
         const bytes = await fs.readFile(project.file_path);
 
         if (project.raw) {
-            const byte_string = [...bytes].map(x => x.toString(16)).join(' ');
+            const byte_string = [...bytes].map(x => x.toString(16).padStart(2, '0')).join(' ');
 
             form.append('bytes', byte_string);
             form.append('arch', project.arch);
